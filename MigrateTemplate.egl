@@ -1,0 +1,72 @@
+[%	
+var root : mp!Encuesta:= mp!Encuesta.all.at(0);
+%]
+
+
+//obtenemos toda la funcionalidad del modelo shop
+var ENCUESTA = require('./encuesta');
+
+ENCUESTA.modulosTable();
+ENCUESTA.preguntasTable();
+ENCUESTA.respuestasTable();
+ENCUESTA.encuesta_respuestasTable();
+
+//Agregar modulos
+[%
+var idModulo = 0;
+for(modulo in mp!Modulo.all)
+{
+	
+%]
+
+ENCUESTA.insertModulo(
+    {
+	    idmodulo:[%=idModulo%],
+	    nombre:"[%=modulo.titulo%]",
+	    esinicial:1
+    }
+);
+
+[%
+	idModulo++;
+}
+%]
+
+//Agregar preguntas
+[%
+var idPregunta = 0;
+
+for(pregunta in mp!Pregunta.all)
+{
+%]
+ENCUESTA.insertPregunta(
+    {
+        idpregunta:[%=idPregunta%],
+        pregunta:"[%=pregunta.descripcion%]",
+        modulo:0,
+        espreguntainicial:1,
+        tipo:[%=pregunta.tipoPregunta.Value - 1%],
+        siguientepregunta:1,
+        siguientemodulo:-1
+    }
+);
+[% 
+	var idRespuesta = 0;
+	for(respuesta in pregunta.respuestas){
+%]
+ENCUESTA.insertRespuesta(
+	{
+       idrespuesta:[%=idRespuesta%],
+       respuesta:"[%=respuesta.valor%]",
+       pregunta:[%=idPregunta%],
+       siguientepregunta:2,
+       siguientemodulo:-1,
+	}
+);	
+[%
+	idRespuesta++;
+	}
+	idPregunta++;
+}
+%]
+}
