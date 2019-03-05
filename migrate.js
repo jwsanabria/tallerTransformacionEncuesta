@@ -23,7 +23,7 @@ ENCUESTA.insertModulo(
     {
 	    idmodulo:1,
 	    nombre:"Módulo de ingresos",
-	    esinicial:1
+	    esinicial:0
     }
 );
 
@@ -32,7 +32,7 @@ ENCUESTA.insertModulo(
     {
 	    idmodulo:2,
 	    nombre:"Modulo Universitario",
-	    esinicial:1
+	    esinicial:0
     }
 );
 
@@ -54,7 +54,7 @@ ENCUESTA.insertPregunta(
         idpregunta:1,
         pregunta:"¿Cúal es su edad?",
         modulo:0,
-        espreguntainicial:1,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -83,7 +83,7 @@ ENCUESTA.insertPregunta(
         idpregunta:2,
         pregunta:"¿Cúal es su estado civil?",
         modulo:0,
-        espreguntainicial:1,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -121,7 +121,7 @@ ENCUESTA.insertPregunta(
         idpregunta:3,
         pregunta:"¿Hace cuanto vive con su pareja?",
         modulo:0,
-        espreguntainicial:1,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -150,7 +150,7 @@ ENCUESTA.insertPregunta(
         idpregunta:4,
         pregunta:"¿Cúal es su grado de escolaridad?",
         modulo:0,
-        espreguntainicial:1,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -205,7 +205,7 @@ ENCUESTA.insertPregunta(
     {
         idpregunta:5,
         pregunta:"¿Cáules son sus ingresos mensuales?",
-        modulo:0,
+        modulo:1,
         espreguntainicial:1,
         tipo:1,
         siguientepregunta:1,
@@ -241,10 +241,10 @@ ENCUESTA.insertRespuesta(
 );	
 ENCUESTA.insertPregunta(
     {
-        idpregunta:6,
+        idpregunta:7,
         pregunta:"¿Cuántos trabajos tiene?",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:1,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -254,7 +254,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:0,
        respuesta:"1",
-       pregunta:6,
+       pregunta:7,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -263,7 +263,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:1,
        respuesta:"2",
-       pregunta:6,
+       pregunta:7,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -272,17 +272,17 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:2,
        respuesta:"Más de 2",
-       pregunta:6,
+       pregunta:7,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertPregunta(
     {
-        idpregunta:7,
+        idpregunta:6,
         pregunta:"¿Usted es trabajador independiente?",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:1,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -292,7 +292,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:0,
        respuesta:"Si",
-       pregunta:7,
+       pregunta:6,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -301,7 +301,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:1,
        respuesta:"No",
-       pregunta:7,
+       pregunta:6,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -310,8 +310,8 @@ ENCUESTA.insertPregunta(
     {
         idpregunta:8,
         pregunta:"Su/sus contrato/s es/son",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:1,
+        espreguntainicial:0,
         tipo:2,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -348,8 +348,8 @@ ENCUESTA.insertPregunta(
     {
         idpregunta:9,
         pregunta:"¿Cotiza salud y pensión?",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:1,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -377,7 +377,7 @@ ENCUESTA.insertPregunta(
     {
         idpregunta:10,
         pregunta:"¿Cuántos años estudió en la universidad?",
-        modulo:0,
+        modulo:2,
         espreguntainicial:1,
         tipo:1,
         siguientepregunta:1,
@@ -415,8 +415,8 @@ ENCUESTA.insertPregunta(
     {
         idpregunta:11,
         pregunta:"Estudio en una Universidad:",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:2,
+        espreguntainicial:0,
         tipo:2,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -451,10 +451,10 @@ ENCUESTA.insertRespuesta(
 );	
 ENCUESTA.insertPregunta(
     {
-        idpregunta:12,
+        idpregunta:13,
         pregunta:"¿Usted terminó todos sus estudios?",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:2,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -464,7 +464,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:0,
        respuesta:"Si",
-       pregunta:12,
+       pregunta:13,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -473,17 +473,17 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:1,
        respuesta:"No",
-       pregunta:12,
+       pregunta:13,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertPregunta(
     {
-        idpregunta:13,
+        idpregunta:12,
         pregunta:"¿Usted pagó?",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:2,
+        espreguntainicial:0,
         tipo:1,
         siguientepregunta:1,
         siguientemodulo:-1
@@ -493,7 +493,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:0,
        respuesta:"Menos de un millon",
-       pregunta:13,
+       pregunta:12,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -502,7 +502,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:1,
        respuesta:"Más de un millon y menos de 4 millones",
-       pregunta:13,
+       pregunta:12,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -511,7 +511,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:2,
        respuesta:"Más de 4 millones",
-       pregunta:13,
+       pregunta:12,
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -520,8 +520,8 @@ ENCUESTA.insertPregunta(
     {
         idpregunta:14,
         pregunta:"¿Cúal es el nombre de su universidad?",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:2,
+        espreguntainicial:0,
         tipo:0,
         siguientepregunta:1,
         siguientemodulo:-1

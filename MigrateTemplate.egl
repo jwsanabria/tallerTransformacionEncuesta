@@ -21,9 +21,9 @@ for(modulo in mp!Modulo.all)
 
 ENCUESTA.insertModulo(
     {
-	    idmodulo:[%=idModulo%],
+	    idmodulo:[%=modulo.idModulo%],
 	    nombre:"[%=modulo.titulo%]",
-	    esinicial:1
+	    esinicial:[%=modulo.esInicial%]
     }
 );
 
@@ -34,20 +34,34 @@ ENCUESTA.insertModulo(
 
 //Agregar preguntas
 [%
-var idPregunta = 0;
 
-for(pregunta in mp!Pregunta.all)
+for(modulo in mp!Modulo.all)
 {
+for(pregunta in modulo.preguntas)
+{ 
+	var esInicial=0;
+	var sigPregunta=-1;
+	var sigModulo=-1;
 %]
 ENCUESTA.insertPregunta(
     {
-        idpregunta:[%=idPregunta%],
+        idpregunta:[%=pregunta.idPregunta%],
         pregunta:"[%=pregunta.descripcion%]",
-        modulo:0,
-        espreguntainicial:1,
+        modulo:[%=modulo.idModulo%],
+        [% for(saltoInicio in mp!SaltoInicio.all) { if(saltoInicio.destino==pregunta){ esInicial =1; break;}}%]
+        espreguntainicial:[%=esInicial%],
         tipo:[%=pregunta.tipoPregunta.Value - 1%],
-        siguientepregunta:1,
-        siguientemodulo:-1
+        [% for(saltoPregunta in mp!SaltoPregunta.all) { 
+        	if(saltoPregunta.origen==pregunta){
+        		if(typeof saltoPregunta.destino == Modulo){
+        			sigModulo = saltoPregunta.destino.idModulo;
+        		}else{
+        			sigPregunta = saltoPregunta.destino.idPregunta;
+        		}
+        	}
+        }%]
+        siguientepregunta:[%=sigPregunta%],
+        siguientemodulo:[%=sigModulo%]
     }
 );
 [% 
@@ -58,7 +72,7 @@ ENCUESTA.insertRespuesta(
 	{
        idrespuesta:[%=idRespuesta%],
        respuesta:"[%=respuesta.valor%]",
-       pregunta:[%=idPregunta%],
+       pregunta:[%=pregunta.idPregunta%],
        siguientepregunta:2,
        siguientemodulo:-1,
 	}
@@ -66,7 +80,7 @@ ENCUESTA.insertRespuesta(
 [%
 	idRespuesta++;
 	}
-	idPregunta++;
+}
 }
 %]
 }
