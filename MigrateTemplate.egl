@@ -53,7 +53,7 @@ ENCUESTA.insertPregunta(
         tipo:[%=pregunta.tipoPregunta.Value - 1%],
         [% for(saltoPregunta in mp!SaltoPregunta.all) { 
         	if(saltoPregunta.origen==pregunta){
-        		if(typeof saltoPregunta.destino == Modulo){
+        		if(saltoPregunta.destino.isTypeOf( Modulo)){
         			sigModulo = saltoPregunta.destino.idModulo;
         		}else{
         			sigPregunta = saltoPregunta.destino.idPregunta;

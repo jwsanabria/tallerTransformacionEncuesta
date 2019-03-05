@@ -56,7 +56,7 @@ ENCUESTA.insertPregunta(
         modulo:0,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -85,7 +85,7 @@ ENCUESTA.insertPregunta(
         modulo:0,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -123,7 +123,7 @@ ENCUESTA.insertPregunta(
         modulo:0,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:4,
         siguientemodulo:-1
     }
 );
@@ -152,7 +152,7 @@ ENCUESTA.insertPregunta(
         modulo:0,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -208,7 +208,7 @@ ENCUESTA.insertPregunta(
         modulo:1,
         espreguntainicial:1,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -246,7 +246,7 @@ ENCUESTA.insertPregunta(
         modulo:1,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -284,7 +284,7 @@ ENCUESTA.insertPregunta(
         modulo:1,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -313,7 +313,7 @@ ENCUESTA.insertPregunta(
         modulo:1,
         espreguntainicial:0,
         tipo:2,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -351,7 +351,7 @@ ENCUESTA.insertPregunta(
         modulo:1,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -380,7 +380,7 @@ ENCUESTA.insertPregunta(
         modulo:2,
         espreguntainicial:1,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:11,
         siguientemodulo:-1
     }
 );
@@ -418,7 +418,7 @@ ENCUESTA.insertPregunta(
         modulo:2,
         espreguntainicial:0,
         tipo:2,
-        siguientepregunta:1,
+        siguientepregunta:-1,
         siguientemodulo:-1
     }
 );
@@ -456,7 +456,7 @@ ENCUESTA.insertPregunta(
         modulo:2,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:14,
         siguientemodulo:-1
     }
 );
@@ -485,7 +485,7 @@ ENCUESTA.insertPregunta(
         modulo:2,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:1,
+        siguientepregunta:13,
         siguientemodulo:-1
     }
 );
@@ -523,8 +523,8 @@ ENCUESTA.insertPregunta(
         modulo:2,
         espreguntainicial:0,
         tipo:0,
-        siguientepregunta:1,
-        siguientemodulo:-1
+        siguientepregunta:-1,
+        siguientemodulo:1
     }
 );
 }
