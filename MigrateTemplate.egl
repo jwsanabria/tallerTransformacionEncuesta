@@ -1,8 +1,3 @@
-[%	
-var root : mp!Encuesta:= mp!Encuesta.all.at(0);
-%]
-
-
 //obtenemos toda la funcionalidad del modelo shop
 var ENCUESTA = require('./encuesta');
 
@@ -13,22 +8,18 @@ ENCUESTA.encuesta_respuestasTable();
 
 //Agregar modulos
 [%
-var idModulo = 0;
 for(modulo in mp!Modulo.all)
 {
-	
 %]
 
-ENCUESTA.insertModulo(
+	ENCUESTA.insertModulo(
     {
 	    idmodulo:[%=modulo.idModulo%],
 	    nombre:"[%=modulo.titulo%]",
 	    esinicial:[%=modulo.esInicial%]
-    }
-);
+    });
 
 [%
-	idModulo++;
 }
 %]
 
@@ -37,20 +28,29 @@ ENCUESTA.insertModulo(
 
 for(modulo in mp!Modulo.all)
 {
-for(pregunta in modulo.preguntas)
-{ 
-	var esInicial=0;
-	var sigPregunta=-1;
-	var sigModulo=-1;
+	for(pregunta in modulo.preguntas)
+	{ 
+		var esInicial=0;
+		var sigPregunta=-1;
+		var sigModulo=-1;
 %]
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
-        idpregunta:[%=pregunta.idPregunta%],
-        pregunta:"[%=pregunta.descripcion%]",
-        modulo:[%=modulo.idModulo%],
-        [% for(saltoInicio in mp!SaltoInicio.all) { if(saltoInicio.destino==pregunta){ esInicial =1; break;}}%]
+        idpregunta:[%=pregunta.idPregunta %],
+        pregunta:"[%=pregunta.descripcion %]",
+        modulo:[%=modulo.idModulo %],
+        [% 
+        for(saltoInicio in mp!SaltoInicio.all) 
+        { 
+        	if(saltoInicio.destino==pregunta)
+        	{ 
+        		esInicial = 1; 
+        		break;
+        	}
+        }
+        %]
         espreguntainicial:[%=esInicial%],
-        tipo:[%=pregunta.tipoPregunta.Value - 1%],
+        tipo:[%=pregunta.tipoPregunta.Value - 1 %],
         [% for(saltoPregunta in mp!SaltoPregunta.all) { 
         	if(saltoPregunta.origen==pregunta){
         		if(saltoPregunta.destino.isTypeOf( Modulo)){
@@ -59,28 +59,45 @@ ENCUESTA.insertPregunta(
         			sigPregunta = saltoPregunta.destino.idPregunta;
         		}
         	}
-        }%]
+        }
+        %]
         siguientepregunta:[%=sigPregunta%],
         siguientemodulo:[%=sigModulo%]
     }
 );
 [% 
-	var idRespuesta = 0;
-	for(respuesta in pregunta.respuestas){
+	for(respuesta in pregunta.respuestas)
+	{
+		sigPregunta=-1;
+		sigModulo=-1;
 %]
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:[%=idRespuesta%],
+       idrespuesta:[%=respuesta.idRespuesta%],
        respuesta:"[%=respuesta.valor%]",
        pregunta:[%=pregunta.idPregunta%],
-       siguientepregunta:2,
-       siguientemodulo:-1,
+       [% 
+       		for(saltoRespuesta in mp!SaltoRespuesta.all) 
+       		{ 
+        		if(saltoRespuesta.origen==respuesta)
+        		{
+        			if(saltoRespuesta.destino.isTypeOf(mp!Modulo))
+        			{
+        				sigModulo = saltoRespuesta.destino.idModulo;
+        			}
+        			else
+        			{
+        				sigPregunta = saltoRespuesta.destino.idPregunta;
+        			}
+        		}
+        	}
+        %]
+       siguientepregunta:[%=sigPregunta %],
+       siguientemodulo:[%=sigModulo%],
 	}
 );	
 [%
-	idRespuesta++;
 	}
 }
 }
 %]
-}

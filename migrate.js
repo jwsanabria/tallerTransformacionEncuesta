@@ -1,5 +1,3 @@
-
-
 //obtenemos toda la funcionalidad del modelo shop
 var ENCUESTA = require('./encuesta');
 
@@ -10,35 +8,32 @@ ENCUESTA.encuesta_respuestasTable();
 
 //Agregar modulos
 
-ENCUESTA.insertModulo(
+	ENCUESTA.insertModulo(
     {
 	    idmodulo:0,
 	    nombre:"Modulo de datos personales",
 	    esinicial:1
-    }
-);
+    });
 
 
-ENCUESTA.insertModulo(
+	ENCUESTA.insertModulo(
     {
 	    idmodulo:1,
 	    nombre:"Módulo de ingresos",
 	    esinicial:0
-    }
-);
+    });
 
 
-ENCUESTA.insertModulo(
+	ENCUESTA.insertModulo(
     {
 	    idmodulo:2,
 	    nombre:"Modulo Universitario",
 	    esinicial:0
-    }
-);
+    });
 
 
 //Agregar preguntas
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:0,
         pregunta:"¿Cúal es su nombre?",
@@ -49,7 +44,7 @@ ENCUESTA.insertPregunta(
         siguientemodulo:-1
     }
 );
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:1,
         pregunta:"¿Cúal es su edad?",
@@ -74,11 +69,11 @@ ENCUESTA.insertRespuesta(
        idrespuesta:1,
        respuesta:"Menos de 18 años",
        pregunta:1,
-       siguientepregunta:2,
+       siguientepregunta:4,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:2,
         pregunta:"¿Cúal es su estado civil?",
@@ -91,32 +86,32 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:2,
        respuesta:"Casado",
        pregunta:2,
-       siguientepregunta:2,
+       siguientepregunta:3,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:3,
        respuesta:"Soltero",
        pregunta:2,
-       siguientepregunta:2,
+       siguientepregunta:4,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:2,
+       idrespuesta:4,
        respuesta:"Unión libre",
        pregunta:2,
-       siguientepregunta:2,
+       siguientepregunta:3,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:3,
         pregunta:"¿Hace cuanto vive con su pareja?",
@@ -129,23 +124,23 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:5,
        respuesta:"Menos de 2 años",
        pregunta:3,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:6,
        respuesta:"2 años o más",
        pregunta:3,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:4,
         pregunta:"¿Cúal es su grado de escolaridad?",
@@ -158,50 +153,50 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:7,
        respuesta:"Bachiller",
        pregunta:4,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:8,
        respuesta:"Técnico",
        pregunta:4,
-       siguientepregunta:2,
-       siguientemodulo:-1,
+       siguientepregunta:-1,
+       siguientemodulo:1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:2,
+       idrespuesta:9,
        respuesta:"Tecnólogo",
        pregunta:4,
-       siguientepregunta:2,
-       siguientemodulo:-1,
+       siguientepregunta:-1,
+       siguientemodulo:1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:3,
+       idrespuesta:10,
        respuesta:"Universitario",
        pregunta:4,
-       siguientepregunta:2,
-       siguientemodulo:-1,
+       siguientepregunta:-1,
+       siguientemodulo:2,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:4,
+       idrespuesta:11,
        respuesta:"Postgrado",
        pregunta:4,
-       siguientepregunta:2,
-       siguientemodulo:-1,
+       siguientepregunta:-1,
+       siguientemodulo:2,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:5,
         pregunta:"¿Cáules son sus ingresos mensuales?",
@@ -214,34 +209,34 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:12,
        respuesta:"Menos de un salario mínimo",
        pregunta:5,
-       siguientepregunta:2,
+       siguientepregunta:7,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:13,
        respuesta:"Un salario mínimo",
        pregunta:5,
-       siguientepregunta:2,
+       siguientepregunta:7,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:2,
+       idrespuesta:14,
        respuesta:"Más de un salario mínimo",
        pregunta:5,
-       siguientepregunta:2,
+       siguientepregunta:6,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
-        idpregunta:7,
+        idpregunta:6,
         pregunta:"¿Cuántos trabajos tiene?",
         modulo:1,
         espreguntainicial:0,
@@ -252,34 +247,34 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:15,
        respuesta:"1",
-       pregunta:7,
-       siguientepregunta:2,
+       pregunta:6,
+       siguientepregunta:8,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:16,
        respuesta:"2",
-       pregunta:7,
-       siguientepregunta:2,
+       pregunta:6,
+       siguientepregunta:8,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:2,
+       idrespuesta:17,
        respuesta:"Más de 2",
-       pregunta:7,
-       siguientepregunta:2,
+       pregunta:6,
+       siguientepregunta:8,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
-        idpregunta:6,
+        idpregunta:7,
         pregunta:"¿Usted es trabajador independiente?",
         modulo:1,
         espreguntainicial:0,
@@ -290,23 +285,23 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:18,
        respuesta:"Si",
-       pregunta:6,
-       siguientepregunta:2,
+       pregunta:7,
+       siguientepregunta:9,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:19,
        respuesta:"No",
-       pregunta:6,
-       siguientepregunta:2,
+       pregunta:7,
+       siguientepregunta:8,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:8,
         pregunta:"Su/sus contrato/s es/son",
@@ -319,32 +314,32 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:20,
        respuesta:"A termino fijo",
        pregunta:8,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:21,
        respuesta:"Prestación de servicios",
        pregunta:8,
-       siguientepregunta:2,
+       siguientepregunta:9,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:2,
+       idrespuesta:22,
        respuesta:"A término indefinido",
        pregunta:8,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:9,
         pregunta:"¿Cotiza salud y pensión?",
@@ -357,23 +352,23 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:23,
        respuesta:"Si",
        pregunta:9,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:24,
        respuesta:"No",
        pregunta:9,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:10,
         pregunta:"¿Cuántos años estudió en la universidad?",
@@ -386,32 +381,32 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:25,
        respuesta:"4 años",
        pregunta:10,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:26,
        respuesta:"Más de 4 años y menos de 8",
        pregunta:10,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:2,
+       idrespuesta:27,
        respuesta:"8 años o más",
        pregunta:10,
-       siguientepregunta:2,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:11,
         pregunta:"Estudio en una Universidad:",
@@ -424,34 +419,34 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:28,
        respuesta:"Pública",
        pregunta:11,
-       siguientepregunta:2,
+       siguientepregunta:12,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:29,
        respuesta:"Privada",
        pregunta:11,
-       siguientepregunta:2,
+       siguientepregunta:13,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:2,
+       idrespuesta:30,
        respuesta:"Privada y pública",
        pregunta:11,
-       siguientepregunta:2,
+       siguientepregunta:12,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
-        idpregunta:13,
+        idpregunta:12,
         pregunta:"¿Usted terminó todos sus estudios?",
         modulo:2,
         espreguntainicial:0,
@@ -462,61 +457,61 @@ ENCUESTA.insertPregunta(
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:31,
        respuesta:"Si",
-       pregunta:13,
-       siguientepregunta:2,
+       pregunta:12,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:32,
        respuesta:"No",
-       pregunta:13,
-       siguientepregunta:2,
+       pregunta:12,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
-        idpregunta:12,
+        idpregunta:13,
         pregunta:"¿Usted pagó?",
         modulo:2,
         espreguntainicial:0,
         tipo:1,
-        siguientepregunta:13,
+        siguientepregunta:12,
         siguientemodulo:-1
     }
 );
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:0,
+       idrespuesta:33,
        respuesta:"Menos de un millon",
-       pregunta:12,
-       siguientepregunta:2,
+       pregunta:13,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:1,
+       idrespuesta:34,
        respuesta:"Más de un millon y menos de 4 millones",
-       pregunta:12,
-       siguientepregunta:2,
+       pregunta:13,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
 ENCUESTA.insertRespuesta(
 	{
-       idrespuesta:2,
+       idrespuesta:35,
        respuesta:"Más de 4 millones",
-       pregunta:12,
-       siguientepregunta:2,
+       pregunta:13,
+       siguientepregunta:-1,
        siguientemodulo:-1,
 	}
 );	
-ENCUESTA.insertPregunta(
+	ENCUESTA.insertPregunta(
     {
         idpregunta:14,
         pregunta:"¿Cúal es el nombre de su universidad?",
@@ -527,4 +522,3 @@ ENCUESTA.insertPregunta(
         siguientemodulo:1
     }
 );
-}

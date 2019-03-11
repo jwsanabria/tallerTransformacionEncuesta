@@ -1,4 +1,35 @@
 [% 
 	var t:Template:= TemplateFactory.load('MigrateTemplate.egl');
+	//populate lista modulos
+	var root : mp!Encuesta:= mp!Encuesta.all.at(0);
+	var countMod : Integer := 0;
+	var countPre : Integer := 0;
+	var countRes : Integer := 0;
+	for(mod in root.elemento->select(e|e.isTypeOf(mp!Modulo)))
+	{
+		mod.idModulo = countMod;
+		countMod++;
+		for(pre in mod.preguntas)
+		{
+			pre.idPregunta = countPre;
+			countPre++;
+			for(res in pre.respuestas)
+			{
+				res.idRespuesta = countRes;
+				countRes++;
+			}		
+		}
+	}
+	t.populate('root', root);
 	t.generate('migrate.js');
+	
+	var tEnc:Template:= TemplateFactory.load('EncuestaTemplate.egl');
+	tEnc.populate('root', root);
+	tEnc.generate('encuesta.js');
+	
+	
+	var tEnc:Template:= TemplateFactory.load('HomeHtmlTemplate.egl');
+	tEnc.populate('root', root);
+	tEnc.generate('home.component.html');
+	
 %]
